@@ -11,16 +11,56 @@
 int main(int argc, char **argv, char **envp)
 {
 	char*command;
+	char *command_cpy;
 	size_t n;
-	int char_read;
+	char *token;
+	int total_token = 0;
+	int char_read, i;
+	char *delim = " ";
 	(void)argc, (void)argv, (void)envp;
 
 	do {
 	printf("alx_shell_$ ");
 	char_read = getline(&command, &n, stdin);
-	printf("%d\n", char_read);
 	printf("%s", command);
+	if (char_read == -1)
+	{
+		return (-1);
+	}
+	command_cpy = malloc(sizeof(char)*char_read);
+	if (command_cpy == NULL)
+	{
+		perror("Space not allocated");
+		return (-1);
+	}
+	strcpy(command_cpy, command);
+	token = strtok(command, delim);
+
+	while (token != NULL)
+	{
+		total_token++;
+		token = strtok(NULL, delim);
+	}
+	total_token++;
+
+	argv = malloc(sizeof(char)*total_token);
+
+	token = strtok(command_cpy, delim);
+
+	for (i = 0; token != NULL; i++)
+	{
+		argv[i] = malloc(sizeof(char)*strlen(token));
+		strcpy(argv[i], token);
+		printf("%s\n",token);
+
+		token = strtok(NULL, delim);
+	}
+	argv[i] = NULL;
+
 	}while (1);
+
+	free(command_cpy);
+	free(argv);
 
 	return (0);
 }
