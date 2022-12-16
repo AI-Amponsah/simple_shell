@@ -18,4 +18,9 @@ char *path(char *command)
 	length = strlen(path_token);
 	file_path = malloc(cm_len + length + 2);
 
+	strcpy(file_path, path_token);
+	strcat(file_path, "/");
+	strcpy(file_path, command);
+	strcat("\0");
+
 }
