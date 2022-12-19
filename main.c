@@ -43,11 +43,10 @@ int main(int argc, char **argv)
 	{
 		argv[i] = malloc(sizeof(char) * strlen(token));
 		strcpy(argv[i], token);
-		printf("%s\n", argv[i]);
 		token = strtok(NULL, delim);
 	}
 	argv[i] = NULL;
-	/*exe_cute(argv);*/
+	exe_cute(argv);
 	}
 	free(command);
 	free(command_cpy);

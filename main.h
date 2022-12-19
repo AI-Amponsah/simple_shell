@@ -5,5 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
-void execute(char **argv);
+#include <sys/stat.h>
+void exe_cute(char **argv);
+char *find_path(char *command);
 #endif
