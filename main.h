@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
 void exe_cute(char **argv);
 char *find_path(char *command);
 #endif
