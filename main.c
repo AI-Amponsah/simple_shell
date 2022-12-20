@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	(void)argc;
 	while (1)
 	{
-	printf("_shell:$ ");
+	printf("shell~$ ");
 	char_read = getline(&command, &n, stdin);
 	if (char_read == -1)
 	{
