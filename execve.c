@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-  *execute - excutes the commands
+  *exe_cute - excutes the commands
   * @argv: Argument vector
   *
   *Return: void

@@ -9,4 +9,5 @@
 #include <sys/wait.h>
 void exe_cute(char **argv);
 char *find_path(char *command);
+void parse(char *commandi, int n);
 #endif
